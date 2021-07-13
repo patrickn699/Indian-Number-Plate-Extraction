@@ -2,6 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import re as r
 import easyocr
+#import os
+#os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
 re = easyocr.Reader(['en'])
 #pl = []

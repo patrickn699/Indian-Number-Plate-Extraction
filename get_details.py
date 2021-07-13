@@ -11,9 +11,6 @@ import time
 import pandas as pd
 
 
-
-    
-
 def fetch( numb):
 
     options = webdriver.ChromeOptions()
@@ -22,7 +19,6 @@ def fetch( numb):
     options.binary_location = r"C:/Program Files/Google/Chrome/Application/chrome.exe"
     driver = webdriver.Chrome(executable_path=chrome_path,chrome_options=options)
 
-    num = 'MH14BK7830'
     #pas = 'vehicledetails@1'
     #bro = webdriver.Chrome()
     #url = 'https://vahan.nic.in/nrservices/faces/user/citizen/citizenlogin.xhtml'
@@ -31,14 +27,16 @@ def fetch( numb):
     
     try:
         driver.get(url2)
-        time.sleep(10)
+        time.sleep(5)
         print(numb)
 
         box = driver.find_element_by_xpath('//*[@id="reg_num"]')
+        #box1 = driver.find_element_by_id('fuelcalculatebtn')
         box.send_keys(numb)
         #WebDriverWait(driver,5).until(EC.element_to_be_clickable((By.XPATH,'//*[@id="fuelcalculatebtn"]')))
-        driver.find_element_by_xpath('//*[@id="fuelcalculatebtn"]').click()
-        #time.sleep(15)
+        #driver.find_element_by_xpath('//*[@id="fuelcalculatebtn"]').click()
+        driver.find_element_by_id('fuelcalculatebtn').click()
+        time.sleep(5)
         get_url = driver.current_url
         #pg = driver.page_source(get_url)
         #print(get_url)
