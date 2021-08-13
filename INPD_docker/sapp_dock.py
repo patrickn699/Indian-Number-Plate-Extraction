@@ -52,6 +52,7 @@ try:
     st.image(up_img)
     op, img = l.predict(up_img, cfg)
     grap = l.visulize(img, cfg, op)
+    st.image(grap)
     plts = g.run_easy_ocr(op, img)
     st.image(grap)
 
@@ -70,6 +71,7 @@ try:
 
 except Exception as e:
     #st.write(e)
-    st.warning('Image not uploaded')
+    #st.warning('Image not uploaded')
+    st.warning(e)
 
 
