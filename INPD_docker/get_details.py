@@ -17,13 +17,15 @@ def fetch( numb):
     #options.add_argument('headless')
     #options.add_argument('--disable-gpu')
     options.add_argument('--headless')
-    #options.add_argument('--no-sandbox')
+    options.add_argument("--disable-extensions")
+    options.add_argument('--no-sandbox')
     #options.add_argument('--disable-dev-shm-usage')
     #options.add_argument('--window-size=1420,1080')
     #chrome_path = r'/chromedriver_win32/chromedriver.exe'
-    #options.binary_location = r"C:/Program Files/Google/Chrome/Application/chrome.exe"
+
+    options.binary_location = '/usr/bin/google-chrome'
     #executable_path=chrome_path
-    driver = webdriver.Chrome(chrome_options=options)
+    driver = webdriver.Chrome(chrome_options=options,executable_path=r'/usr/bin/chromedriver')
 
     #pas = 'vehicledetails@1'
     #bro = webdriver.Chrome()
