@@ -72,9 +72,12 @@ RUN pip install 'git+https://github.com/facebookresearch/fvcore'
 RUN python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
 RUN python -c "import easyocr; reader = easyocr.Reader(${language_models}, gpu=False)"
 
+RUN echo PORT $PORT
 
-EXPOSE 8501
+#EXPOSE 8501
+EXPOSE $PORT
 
 
-ENTRYPOINT ["streamlit","run"]
-CMD ["sapp_dock.py"]
+#ENTRYPOINT ["streamlit","run"]
+CMD streamlit run sapp_dock.py --server.port $PORT
+#CMD [ "sapp_dock.py --server.address=0.0.0.0 --server.port=$PORT" ]
