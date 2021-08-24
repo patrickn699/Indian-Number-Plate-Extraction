@@ -54,7 +54,7 @@ try:
     grap = l.visulize(img, cfg, op)
     st.image(grap)
     plts = g.run_easy_ocr(op, img)
-    st.image(grap)
+    #st.image(grap)
 
     print(plts)
     st.write(plts)
