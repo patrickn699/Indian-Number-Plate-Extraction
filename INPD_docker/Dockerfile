@@ -80,4 +80,4 @@ EXPOSE $PORT
 
 #ENTRYPOINT ["streamlit","run"]
 CMD streamlit run sapp_dock.py --server.port $PORT
-#CMD [ "sapp_dock.py --server.address=0.0.0.0 --server.port=$PORT" ]
+#CMD [ "sapp_dock.py"]

@@ -20,8 +20,14 @@ def fetch( numb):
     options.add_argument('--headless')
     options.add_argument('--no-sandbox')
     #options.add_argument('--disable-dev-shm-usage')
+
+    # for windows
     chrome_path = r'E:/Chrome Downloads/chromedriver_win32/chromedriver.exe'
     options.binary_location = r"C:/Program Files/Google/Chrome/Application/chrome.exe"
+    # for linux
+    #options.binary_location = '/usr/bin/google-chrome'
+    #driver = webdriver.Chrome(chrome_options=options,executable_path=r'/usr/bin/chromedriver')
+    
     driver = webdriver.Chrome(executable_path=chrome_path,chrome_options=options)
 
     #pas = 'vehicledetails@1'
